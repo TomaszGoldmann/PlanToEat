@@ -24,10 +24,9 @@
   }
 
   &__table {
-    // display: none;
     text-align: left;
     width: 95%;
-    overflow-y: auto;
+    overflow-y: scroll;
     color: $color-text-table;
 
     &__description {
@@ -48,6 +47,7 @@
       padding-bottom: 1em;
       margin: 1em 0;
       border-bottom: 1px solid grey;
+      justify-content: space-between;
     }
 
     &__id {
@@ -58,26 +58,64 @@
     &__name {
       width: 25%;
       font-weight: bold;
+      text-transform: uppercase;
     }
 
     &__value {
-      width: 50%;
+      width: 40%;
+    }
+
+    &__week {
+      width: 10%;
+    }
+
+    input{
+      width: 20%;
+      height: 100%;
+      margin-right: 5%;
+      padding: 0.3em;
+      border-radius: 0.3em;
+      border: 2px solid grey;
+      &:focus{
+        border: 2px solid cornflowerblue;
+      }
+    }
+
+    textarea{
+      width: 35%;
+      margin-right: 5%;
+      padding: 0.3em;
+      border-radius: 0.3em;
+      border: 2px solid grey;
+      &:focus{
+        border: 2px solid cornflowerblue;
+      }
+    }
+
+    input:nth-of-type(2){
+      width: 35%;
     }
 
     &__action {
       width: 15%;
       text-align: right;
 
-      .fa-pen-to-square {
-        color: darkorange;
-        margin-right: 0.5em;
+      .fa-trash-can {
+        color: indianred;
+        margin-left: 0.5em;
         font-size: 1.5em;
       }
 
-      .fa-trash-can {
-        color: indianred;
+      .fa-pen-to-square {
+        color: darkorange;
+        font-size: 1.5em;
+      }
+
+      .fa-floppy-disk {
+        color: cornflowerblue;
         font-size: 1.5em;
       }
     }
   }
 }
+
