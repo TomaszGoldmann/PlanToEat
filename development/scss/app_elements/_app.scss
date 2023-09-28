@@ -1,0 +1,205 @@
+@use "sass:color";
+
+.header-app {
+  background-color: $color-background-header;
+  height: 100px;
+  width: 100vw;
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h1 {
+    font-family: $Charmonman;
+    font-size: 2em;
+    cursor: pointer;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  #first {
+    font-weight: 100;
+    color: white;
+  }
+
+  #second {
+    color: #e58a20;
+    font-weight: 700;
+  }
+
+  &__user {
+    font-size: 1.5em;
+    color: $color-button;
+    display: flex;
+    align-items: center;
+
+    i {
+      color: $color-button-special;
+      margin-left: 0.5em;
+      font-size: 1.5em;
+    }
+  }
+}
+
+.main-content {
+  width: 85%;
+}
+
+.main {
+  display: flex;
+  height: calc(100vh - 100px);
+
+  .app-aside {
+    background-color: $color-background-side-panel;
+    width: 15%;
+
+    &__items {
+      &__item {
+        height: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .link {
+          display: flex;
+          align-items: center;
+          padding-left: 2em;
+          width: 100%;
+          height: 100%;
+          color: $color-button;
+          text-decoration: none;
+          border-left: 2px solid transparent;
+
+          &:hover {
+            background-color: darken($color-background-side-panel, 10%);
+            border-left: 2px solid $color-button-special;
+            position: relative;
+
+            &::after {
+              font-family: "Font Awesome 5 Free";
+              font-weight: 900;
+              content: "\f054";
+              color: $color-button-special;
+              position: absolute;
+              transform: translate(-50%, -50%);
+              top: 50%;
+              right: 10%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .app-main {
+    background-image: url("../images/tlo_aplikacji.png");
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .hide {
+      display: none;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .app-main__container {
+      width: 90%;
+      height: 90%;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background-color: $color-background-screen;
+      border: dashed black 1px;
+      font-family: $font-Open_Sans;
+
+      .app-main__item {
+        margin-bottom: 1em;
+      }
+
+      h1 {
+        font-size: 3em;
+        font-weight: bolder;
+      }
+
+      h2 {
+        align-items: center;
+        font-size: 2em;
+        font-weight: bolder;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+
+        .text {
+          padding: 0.5em 1em;
+        }
+
+        .btn {
+          border-radius: 0;
+          border: none;
+          padding: 0.5em;
+        }
+      }
+
+      p {
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: bolder;
+      }
+    }
+  }
+
+  .app_general_wrapper {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding: 1rem 2rem 1rem 2rem;
+  }
+
+  .app-widgets {
+    width: 100%;
+    height: 18rem;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.5rem;
+
+    &__box {
+      flex-shrink: 0;
+      width: 12rem;
+      height: 12rem;
+      border: dashed black 1px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin: 1em 1em 1em 0;
+      background-color: $color-background-screen;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        scale: 1.05;
+      }
+
+      .fa-square-plus {
+        font-size: 7em;
+        color: $color-message-success;
+      }
+
+      .app-widgets__box__h1 {
+        color: $color-message-success;
+        font-family: $font-Open_Sans;
+        font-size: 1.4em;
+        text-align: center;
+      }
+    }
+  }
+}

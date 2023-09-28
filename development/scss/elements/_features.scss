@@ -1,0 +1,34 @@
+.features {
+  background-color: $color-background-screen;
+
+  &__container {
+    color: $color-text-column;
+    display: flex;
+    gap: 7rem;
+  }
+  &__single {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: 2rem;
+    padding-bottom: 3rem;
+    text-align: center;
+    line-height: 2.5rem;
+  }
+  &__text {
+    font-size: 1.72rem;
+    padding-bottom: 3rem;
+    text-align: center;
+    line-height: 2rem;
+  }
+
+  &__icon {
+    color: $color-text-table;
+    font-size: 7rem;
+    padding: 3rem;
+  }
+}

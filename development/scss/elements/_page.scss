@@ -1,0 +1,31 @@
+@use 'sass:color';
+
+html {
+  font-size: 14px;
+  font-family: $font-Open_Sans;
+}
+
+body {
+  background-color: $color-body;
+}
+
+.container {
+  width: $contianer-width;
+  margin: 0 auto;
+}
+
+.btn {
+  background-color: $color-button-special;
+  font-size: 1.4rem;
+  color: $color-text;
+  border-radius: 0.2em;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.1s;
+  &:hover{
+    background-color: darken($color-button-special, 10%);
+  }
+}

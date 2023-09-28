@@ -1,0 +1,175 @@
+.addSchedule {
+  background-color: #fffffa;
+  color: $color-text-column;
+  padding: 1.4rem;
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  border: 1px dotted black;
+  font-size: 1.7rem;
+  overflow-y: auto;
+
+  &--hide {
+    display: none;
+  }
+
+  &__btn {
+    border: none;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+    &--border {
+      border-bottom: 1px solid black;
+    }
+  }
+
+  &__wrapperInput {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    margin: 0 auto;
+    width: 90%;
+
+    &--position {
+      align-items: flex-start;
+    }
+  }
+
+  &__input {
+    height: 2em;
+    flex-grow: 1;
+    margin-left: 1rem;
+    padding: 0.5em;
+    font-size: 1rem;
+  }
+
+  &__textarea {
+    font-family: $font-arial;
+    flex-grow: 1;
+    margin-left: 1rem;
+    padding: 0.5em;
+    font-size: 1rem;
+  }
+
+  &__week {
+    height: 2em;
+    width: 4em;
+    margin-left: 1rem;
+    font-size: 1rem;
+    padding-left: 0.5em;
+  }
+
+  &__title {
+    color: $color-text-highlighted;
+  }
+
+  &__col {
+    width: 47%;
+  }
+
+  &__label {
+    border-bottom: 1px solid black;
+    width: 100%;
+    display: block;
+    padding: 1rem;
+  }
+
+  &__inputCol {
+    width: 100%;
+    margin: 1rem 0 1rem;
+    font-size: 1rem;
+    padding: 0.3rem;
+  }
+
+  &__list {
+    list-style: decimal;
+    padding: 1rem 3rem;
+    height: 9rem;
+    font-size: 1.5rem;
+    overflow-y: scroll;
+
+    &--dot {
+      list-style: disc;
+    }
+  }
+
+  &__icon {
+    font-size: 2.5rem;
+    padding: 1rem 0 0 1rem;
+    align-self: flex-start;
+    color: $color-message-success;
+  }
+}
+
+table {
+  margin-top: 0.3em;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  vertical-align: middle;
+  height: 2.5em;
+  width: 16.7%;
+  font-size: 0.7em;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  font-weight: bold;
+  font-size: 0.8em;
+}
+
+.addSchedule__table__row:not(:first-child) {
+  border-top: 1px solid grey;
+}
+
+select {
+  color: $color-text-table;
+  font-size: 1.1em;
+  width: 90%;
+  text-align: center;
+  border-radius: 0.2em;
+  &:focus{
+    border: 2px solid cornflowerblue;
+  }
+}
+
+.radius{
+  border-radius: 0.3em;
+  border: 1px solid grey;
+  &:focus{
+    border: 1px solid cornflowerblue;
+  }
+}
+
+.error {
+  border: 1px solid rgba(255, 99, 71, 0.79);
+
+  &--btn {
+    position: relative;
+
+    &::after {
+      content: 'Popraw wartości';
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      font-size: 0.6em;
+      padding: 1.2em 0.5em 0;
+      position: absolute;
+      background-color: tomato;
+      top: 85%;
+      height: 2em;
+      clip-path: polygon(45% 35%, 50% 20%, 55% 35%, 100% 35%, 100% 100%, 0 100%, 0 35%);
+    }
+  }
+}

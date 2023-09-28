@@ -1,0 +1,93 @@
+.addRecipe {
+  background-color: #fffffa;
+  padding: 1rem;
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  border: 1px dotted black;
+  font-size: 1.7rem;
+
+  &--hide {
+    display: none;
+  }
+
+  &__btn {
+    border: none;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    &--border {
+      border-bottom: 1px solid black;
+    }
+  }
+
+  &__wrapperInput {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    width: 90%;
+    &--position {
+      align-items: flex-start;
+    }
+  }
+  &__input {
+    flex-grow: 1;
+    margin-left: 1rem;
+    font-size: 1rem;
+  }
+
+  &__title {
+    color: $color-text-highlighted;
+  }
+
+  &__col {
+    width: 47%;
+  }
+  &__label {
+    border-bottom: 1px solid black;
+    width: 100%;
+    display: block;
+    padding: 1rem;
+  }
+
+  &__inputCol {
+    width: 100%;
+    margin: 1rem 0 1rem;
+    font-size: 1rem;
+    padding: 0.3rem;
+  }
+
+  &__list {
+    list-style: decimal;
+    padding: 1rem 3rem;
+    height: 9rem;
+    font-size: 1.5rem;
+    overflow-y: scroll;
+    &--dot {
+      list-style: disc;
+    }
+  }
+
+  &__icon {
+    font-size: 2.5rem;
+    padding: 1rem 0 0 1rem;
+    align-self: flex-start;
+    color: $color-message-success;
+  }
+  &__IconPen {
+    color: $color-message-warning;
+    padding-left: 0.5rem;
+  }
+  &__IconBin {
+    color: $color-icon-bin;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}

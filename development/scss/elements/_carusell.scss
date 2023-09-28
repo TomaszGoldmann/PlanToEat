@@ -1,0 +1,63 @@
+.carusel {
+  height: calc(100vh - 100px);
+  width: 100vw;
+  position: relative;
+
+  &__text {
+    position: absolute;
+    color: $color-text;
+    font-size: 3em;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    top: 50%;
+    left: 50%;
+  }
+
+  &__img {
+    display: block;
+    height: 100%;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  .fa-circle-chevron {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    font-size: 4em;
+    color: $color-buttons-background;
+    transition: 0.2s;
+    &:hover {
+      color: $color-button-hover;
+      scale: 1.2;
+    }
+  }
+
+  .fa-circle-chevron-left {
+    left: 8%;
+  }
+  .fa-circle-chevron-right {
+    right: 8%;
+  }
+
+  .dots {
+    cursor: pointer;
+    position: absolute;
+    transform: translate(50%, -50%);
+    right: 50%;
+    bottom: 10%;
+    color: $color-buttons-background;
+
+    .fa-circle {
+      margin: 0 0.3em;
+      transition: 0.2s;
+      &:hover {
+        color: $color-button-hover;
+        scale: 1.2;
+      }
+    }
+    .fa-circle:first-child {
+      color: $color-text;
+    }
+  }
+}

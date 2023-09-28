@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Zaplanuj Jedzonko</title>
+    <link rel="stylesheet" href="./scss/main.scss"/>
+    <script
+            src="https://kit.fontawesome.com/4559d8edc6.js"
+            crossorigin="anonymous"
+    ></script>
+    <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+            integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+            crossorigin="anonymous"
+    />
+</head>
+<body>
+<header class="header-app">
+    <h1 class="header-app__logo">
+        <a href="index.html">
+            <span id="first">Zaplanuj</span>
+            <span id="second">Jedzonko</span>
+        </a>
+    </h1>
+    <div class="header-app__user">
+        <span class="header-app__user__name">Imię</span>
+        <i class="fa-solid fa-user"></i>
+    </div>
+</header>
+<main class="main">
+    <aside class="app-aside">
+        <ul class="app-aside__items">
+            <li class="app-aside__items__item">
+                <a href="./app.html" class="link">Pulpit</a>
+            </li>
+            <li class="app-aside__items__item">
+                <a href="./recipes.html" class="link">Przepisy</a>
+            </li>
+            <li class="app-aside__items__item">
+                <a href="./schedules.html" class="link">Plany</a>
+            </li>
+        </ul>
+    </aside>
+    <section class="app-main">
+        <div class="app-main__container flex">
+            <h1 class="app-main__item">Witaj</h1>
+            <h2 class="app-main__item">
+                wygląda na to, że jesteś tutaj pierwszy raz
+            </h2>
+            <form id="myForm">
+                <input
+                        class="text app-main__item"
+                        id="nameInput"
+                        type="text"
+                        placeholder="tutaj wpisz jak masz na imię"
+                />
+                <button type="submit" class="btn app-main__item">Gotowe!</button>
+            </form>
+
+            <p>
+                Podaj nam swoje imię, a my zorganizujemy dla Ciebie naszą aplikację
+                :)
+            </p>
+        </div>
+
+        <div class="app_general_wrapper hide">
+            <div class="app-widgets">
+                <div class="app-widgets__box add__recipe">
+                    <i class="fa-regular fa-square-plus"></i>
+                    <h1 class="app-widgets__box__h1">dodaj przepis</h1>
+                </div>
+                <div class="app-widgets__box add__plan">
+                    <i class="fa-regular fa-square-plus"></i>
+                    <h1 class="app-widgets__box__h1">dodaj plan</h1>
+                </div>
+                <section class="widget">
+                    <div class="widget__info widget__single">
+                        <i class="fa-sharp fa-solid fa-circle-info"></i>
+                        <p class="widget__text">Masz już 99 przepisów, nieźle!</p>
+                        <i class="widget_close fa-solid fa-rectangle-xmark"></i>
+                    </div>
+                    <div class="widget__warning widget__single">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <p class="widget__text">Pamiętaj, aby dodać plan!</p>
+                        <i class="widget_close fa-solid fa-rectangle-xmark"></i>
+                    </div>
+                    <div class="widget__success widget__single">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <p class="widget__text">
+                            Świetnie że jesteś! Udanego planowania i smacznego! :)
+                        </p>
+                        <i class="widget_close fa-solid fa-rectangle-xmark"></i>
+                    </div>
+                </section>
+            </div>
+            <!--             <div class="week_preview">
+                            <table class="week_preview_table">
+                                <thead>
+
+                                <tr>
+                                    <th colspan="7" class="week_preview_table_title" id="week_number">Twój plan na {nr_tygodnia}
+                                        tydzień:
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tr class="week_preview_table_day">
+                                    <th class="day">Poniedziałek</th>
+                                    <th class="day">Wtorek</th>
+                                    <th class="day">Środa</th>
+                                    <th class="day">Czwartek</th>
+                                    <th class="day">Piątek</th>
+                                    <th class="day">Sobota</th>
+                                    <th class="day">Niedziela</th>
+                                </tr>
+                                <tr class="breakfast dish_type">
+                                    <td class="breakfast_item dish">śniadanie</td>
+                                    <td class="breakfast_item dish">śniadanie</td>
+                                    <td class="breakfast_item dish">śniadanie</td>
+                                    <td class="breakfast_item dish">śniadanie</td>
+                                    <td class="breakfast_item dish">śniadanie</td>
+                                    <td class="breakfast_item dish">śniadanie</td>
+                                    <td class="breakfast_item dish">śniadanie</td>
+                                </tr>
+                                <tr class="second_breakfast dish_type">
+                                    <td class="breakfast_second_item dish">drugie śniadanie</td>
+                                    <td class="breakfast_second_item dish">drugie śniadanie</td>
+                                    <td class="breakfast_second_item dish">drugie śniadanie</td>
+                                    <td class="breakfast_second_item dish">drugie śniadanie</td>
+                                    <td class="breakfast_second_item dish">drugie śniadanie</td>
+                                    <td class="breakfast_second_item dish">drugie śniadanie</td>
+                                    <td class="breakfast_second_item dish">drugie śniadanie</td>
+                                </tr>
+                                <tr class="soup dish_type">
+                                    <td class="soup_item dish">zupa</td>
+                                    <td class="soup_item dish">zupa</td>
+                                    <td class="soup_item dish">zupa</td>
+                                    <td class="soup_item dish">zupa</td>
+                                    <td class="soup_item dish">zupa</td>
+                                    <td class="soup_item dish">zupa</td>
+                                    <td class="soup_item dish">zupa</td>
+                                </tr>
+                                <tr class="lunch dish_type">
+                                    <td class="lunch_item dish">drugie danie</td>
+                                    <td class="lunch_item dish">drugie danie</td>
+                                    <td class="lunch_item dish">drugie danie</td>
+                                    <td class="lunch_item dish">drugie danie</td>
+                                    <td class="lunch_item dish">drugie danie</td>
+                                    <td class="lunch_item dish">drugie danie</td>
+                                    <td class="lunch_item dish">drugie danie</td>
+                                </tr>
+                                <tr class="dinner dish_type">
+                                    <td class="dinner_item dish">kolacja</td>
+                                    <td class="dinner_item dish">kolacja</td>
+                                    <td class="dinner_item dish">kolacja</td>
+                                    <td class="dinner_item dish">kolacja</td>
+                                    <td class="dinner_item dish">kolacja</td>
+                                    <td class="dinner_item dish">kolacja</td>
+                                    <td class="dinner_item dish">kolacja</td>
+                                </tr>
+                            </table>
+                            <div class="week_preview_btn">
+                                <div class="btn_before">
+                                    <i class="fa-solid fa-angles-left"></i>
+
+                                    <a href="#" id="prev_plan_btn" class="btn_wp" style="text-decoration: none">poprzedni</a>
+                                </div>
+                                <div class="btn_after">
+                                    <a href="#" id="next_plan_btn" class="btn_wp" style="text-decoration: none">następny</a>
+                                    <i class="fa-solid fa-angles-right"></i>
+                                </div>
+                            </div> -->
+
+            <div class="week_preview">
+                <table class="week_preview_table">
+                    <thead>
+                    <tr>
+                        <th colspan="7" class="week_preview_table_title" id="week_number">Twój plan na {nr_tygodnia}
+                            tydzień:
+                        </th>
+                    </tr>
+                    </thead>
+                    <tr class="week_preview_table_day">
+                        <th class="day">Poniedziałek</th>
+                        <th class="day">Wtorek</th>
+                        <th class="day">Środa</th>
+                        <th class="day">Czwartek</th>
+                        <th class="day">Piątek</th>
+                        <th class="day">Sobota</th>
+                        <th class="day">Niedziela</th>
+                    </tr>
+                    <tr class="breakfast dish_type">
+                        <td class="breakfast_item dish">śniadanie</td>
+                        <td class="breakfast_item dish">śniadanie</td>
+                        <td class="breakfast_item dish">śniadanie</td>
+                        <td class="breakfast_item dish">śniadanie</td>
+                        <td class="breakfast_item dish">śniadanie</td>
+                        <td class="breakfast_item dish">śniadanie</td>
+                        <td class="breakfast_item dish">śniadanie</td>
+                    </tr>
+                    <tr class="second_breakfast dish_type">
+                        <td class="breakfast_second_item dish">drugie śniadanie</td>
+                        <td class="breakfast_second_item dish">drugie śniadanie</td>
+                        <td class="breakfast_second_item dish">drugie śniadanie</td>
+                        <td class="breakfast_second_item dish">drugie śniadanie</td>
+                        <td class="breakfast_second_item dish">drugie śniadanie</td>
+                        <td class="breakfast_second_item dish">drugie śniadanie</td>
+                        <td class="breakfast_second_item dish">drugie śniadanie</td>
+                    </tr>
+                    <tr class="soup dish_type">
+                        <td class="soup_item dish">zupa</td>
+                        <td class="soup_item dish">zupa</td>
+                        <td class="soup_item dish">zupa</td>
+                        <td class="soup_item dish">zupa</td>
+                        <td class="soup_item dish">zupa</td>
+                        <td class="soup_item dish">zupa</td>
+                        <td class="soup_item dish">zupa</td>
+
+                    </tr>
+                    <tr class="lunch dish_type">
+                        <td class="lunch_item dish">drugie danie</td>
+                        <td class="lunch_item dish">drugie danie</td>
+                        <td class="lunch_item dish">drugie danie</td>
+                        <td class="lunch_item dish">drugie danie</td>
+                        <td class="lunch_item dish">drugie danie</td>
+                        <td class="lunch_item dish">drugie danie</td>
+                        <td class="lunch_item dish">drugie danie</td>
+                    </tr>
+                    <tr class="dinner dish_type">
+                        <td class="dinner_item dish">kolacja</td>
+                        <td class="dinner_item dish">kolacja</td>
+                        <td class="dinner_item dish">kolacja</td>
+                        <td class="dinner_item dish">kolacja</td>
+                        <td class="dinner_item dish">kolacja</td>
+                        <td class="dinner_item dish">kolacja</td>
+                        <td class="dinner_item dish">kolacja</td>
+                    </tr>
+                </table>
+                <div class="week_preview_btn">
+                    <div class="btn_before">
+                        <i class="fa-solid fa-angles-left"></i>
+                        <a href="#" id="prev_plan_btn" class="btn_wp" style="text-decoration: none">poprzedni</a>
+                    </div>
+                    <div class="btn_after">
+                        <a href="#" id="next_plan_btn" class="btn_wp" style="text-decoration: none">następny</a>
+                        <i class="fa-solid fa-angles-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="addRecipe addRecipe--hide">
+        <div class="addRecipe__wrapper addRecipe__wrapper--border">
+            <h1 class="addRecipe__title">NOWY PRZEPIS</h1>
+            <button class="addRecipe__btn btn" id="btnAddRecipe" type="submit">
+                Zapisz i zamknij
+            </button>
+        </div>
+        <div class="addRecipe__wrapperInput">
+            <label for="name">Nazwa przepisu</label>
+            <input class="addRecipe__input" type="text" id="name"/>
+        </div>
+        <div class="addRecipe__wrapperInput addRecipe__wrapperInput--position">
+            <label for="description">Opis przepisu</label>
+            <textarea
+                    class="addRecipe__input"
+                    id="description"
+                    rows="3"
+            ></textarea>
+        </div>
+        <div class="addRecipe__wrapper">
+            <div class="addRecipe__col">
+                <label class="addRecipe__label" for="instructions"
+                >INSTRUKCJE</label
+                >
+                <div class="addRecipe__wrapper">
+              <textarea
+                      class="addRecipe__inputCol"
+                      id="instructions"
+                      rows="3"
+              ></textarea>
+                    <i
+                            id="btn_addInstructions"
+                            class="addRecipe__icon fa-solid fa-square-plus"
+                    ></i>
+                </div>
+                <div>
+                    <ol id="list_instructions" class="addRecipe__list"></ol>
+                </div>
+            </div>
+            <div class="addRecipe__col">
+                <label class="addRecipe__label" for="ingredients">SKŁADNIKI</label>
+                <div class="addRecipe__wrapper">
+              <textarea
+                      class="addRecipe__inputCol"
+                      id="ingredients"
+                      rows="3"
+              ></textarea>
+                    <i
+                            id="btn_addIngredients"
+                            class="addRecipe__icon fa-solid fa-square-plus"
+                    ></i>
+                </div>
+                <div>
+                    <ul
+                            id="list_ingredients"
+                            class="addRecipe__list addRecipe__list--dot"
+                    ></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="addSchedule addSchedule--hide">
+        <div class="addSchedule__wrapper addSchedule__wrapper--border">
+            <h1 class="addSchedule__title">NOWY PLAN</h1>
+            <button class="addSchedule__btn btn" type="submit">
+                Zapisz i zamknij
+            </button>
+        </div>
+        <div class="addSchedule__wrapperInput">
+            <label for="name">Nazwa planu</label>
+            <input class="addSchedule__input radius" placeholder="Podaj nazwę planu..." type="text"/>
+        </div>
+        <div
+                class="addSchedule__wrapperInput addSchedule__wrapperInput--position"
+        >
+            <label for="description">Opis planu</label>
+            <textarea class="addSchedule__textarea radius" placeholder="Podaj opis planu..." rows="3"></textarea>
+        </div>
+        <div class="addSchedule__wrapperInput">
+            <label for="week">Numer tygodnia</label>
+            <input class="addSchedule__week radius" type="number" id="week"/>
+        </div>
+        <table class="addSchedule__table">
+            <tr class="addSchedule__table__row">
+                <th class="addSchedule__table__header"></th>
+                <th class="addSchedule__table__header">ŚNIADANIE</th>
+                <th class="addSchedule__table__header">DRUGIE ŚNIADANIE</th>
+                <th class="addSchedule__table__header">ZUPA</th>
+                <th class="addSchedule__table__header">DRUGIE DANIE</th>
+                <th class="addSchedule__table__header">KOLACJA</th>
+            </tr>
+            <tr class="addSchedule__table__row">
+                <th class="addSchedule__table__content">PONIEDZIAŁEK</th>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="addSchedule__table__row">
+                <th class="addSchedule__table__content">WTOREK</th>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="addSchedule__table__row">
+                <th class="addSchedule__table__content">ŚRODA</th>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="addSchedule__table__row">
+                <th class="addSchedule__table__content">CZWARTEK</th>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="addSchedule__table__row">
+                <th class="addSchedule__table__content">PIĄTEK</th>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="addSchedule__table__row">
+                <th class="addSchedule__table__content">SOBOTA</th>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="addSchedule__table__row">
+                <th class="addSchedule__table__content">NIEDZIELA</th>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+                <td class="addSchedule__table__content">
+                    <select>
+                        <option disabled selected value="">Wybierz posiłek...</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+    </section>
+</main>
+<script src="./js/app.js"></script>
+<script src="./js/week_plan.js"></script>
+<script src="./js/addSchedule.js"></script>
+</body>
+</html>

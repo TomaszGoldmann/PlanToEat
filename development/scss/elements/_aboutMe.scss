@@ -1,0 +1,28 @@
+.aboutMe {
+  background-color: $color-background-screen;
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 6rem;
+    color: $color-text-column;
+    padding: 6rem 0;
+  }
+
+  &__img {
+    flex-basis: 25rem;
+    flex-shrink: 0;
+    &--size {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-size: 2.6rem;
+    padding-bottom: 2rem;
+  }
+
+  &__text {
+    font-size: 1.7rem;
+    line-height: 2rem;
+  }
+}

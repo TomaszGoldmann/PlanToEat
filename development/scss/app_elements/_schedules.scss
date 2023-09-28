@@ -1,0 +1,120 @@
+.app-main__schedules {
+  padding: 2em;
+  display: flex;
+  justify-content: flex-start !important;
+
+  &__header {
+    width: 100%;
+    padding-bottom: 0.2em;
+    border-bottom: 2px solid grey;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title {
+      color: $color-button-special;
+      font-size: 1.5em;
+    }
+
+    .fa-square-plus {
+      color: darkolivegreen;
+      font-size: 2em;
+    }
+  }
+
+  &__table {
+    text-align: left;
+    width: 95%;
+    overflow-y: scroll;
+    color: $color-text-table;
+
+    &__description {
+      color: $color-text-column;
+      font-weight: bold;
+      font-size: 1.2em;
+      width: 95%;
+      border-bottom: 2px solid grey;
+      margin-top: 1em;
+      padding-bottom: 0.5em;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__content {
+      display: flex;
+      padding-bottom: 1em;
+      margin: 1em 0;
+      border-bottom: 1px solid grey;
+    }
+
+    &__id {
+      width: 10%;
+      font-weight: bold;
+    }
+
+    &__name {
+      width: 25%;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    &__value {
+      width: 40%;
+    }
+
+    &__week {
+      width: 10%;
+    }
+
+    input{
+      width: 20%;
+      height: 100%;
+      margin-right: 5%;
+      padding: 0.3em;
+      border-radius: 0.3em;
+      border: 2px solid grey;
+      &:focus{
+        border: 2px solid cornflowerblue;
+      }
+    }
+
+    textarea{
+      width: 35%;
+      margin-right: 5%;
+      padding: 0.3em;
+      border-radius: 0.3em;
+      border: 2px solid grey;
+      &:focus{
+        border: 2px solid cornflowerblue;
+      }
+    }
+
+    input:nth-of-type(2){
+      width: 35%;
+    }
+
+    &__action {
+      width: 15%;
+      text-align: right;
+
+      .fa-trash-can {
+        color: indianred;
+        margin-left: 0.5em;
+        font-size: 1.5em;
+      }
+
+      .fa-pen-to-square {
+        color: darkorange;
+        font-size: 1.5em;
+      }
+
+      .fa-floppy-disk {
+        color: cornflowerblue;
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
